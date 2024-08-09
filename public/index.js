@@ -1,4 +1,4 @@
-const url = '/comments';
+const url = '/member';
 
 // fetch(url)
 //   .then((r) => r.json())

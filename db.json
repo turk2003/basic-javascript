@@ -1,20 +1,16 @@
 {
-    "posts": [
-      {
-        "id": 1,
-        "title": "json-server",
-        "author": "typicode"
-      }
-    ],
-    "comments": [
-      {
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-      }
-    ],
-    "profile": {
-      "name": "typicode"
+  "member": [
+    {
+      "id": "1",
+      "firstname": "json-server",
+      "lastname": "typicode",
+      "email": "hello@pea.co.th"
+    },
+    {
+      "id": "61d4",
+      "firstname": "json-server2",
+      "lastname": "typicode",
+      "email": "hello@pea.co.th"
     }
-  }
-  
+  ]
+}
