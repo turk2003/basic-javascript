@@ -44,8 +44,7 @@ function renderTable() {
                         <td id="lbFirstName${member.id}">${member.firstname}</td>
                         <td id="lbLastName${member.id}" >${member.lastname}</td>
                         <td id="lbEmail${member.id}"> ${member.email}</td>
-                        <td id="lbCommand${member.id}"><button id="btnDel${member.id} class="btn btn-danger" >del</button></div>
-                        </td>
+                        <td id="lbCommand${member.id}"><button type="button" id="btnDel${member.id}" class="btn btn-danger">Delete</button></div></td>
                       </tr>`;
         tbMembers.innerHTML += newRow;
 
@@ -128,7 +127,5 @@ btnGetAll.onclick = () => {
 btnAdd.onclick = () => {
     let member = members(txtFirstName.value, txtLastName.value, txtEmail.value);
     addMember(member);
-    //Members.push(member);
-    //renderTable();
 
 };
