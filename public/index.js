@@ -35,32 +35,30 @@ function hello() {
 let DelBtn = {};
 function renderTable() {
     tbMembers.innerHTML = '';
-     DelBtn = {};
-    Members.forEach((member, index) => {
-        let delBtn = document.createElement('button');
-        delBtn.innerHTML = 'Del:' + member.id;
-        delBtn.id = 'delBtn' + member.id;
-        //delBtn.className = 'btn btn-danger';
-        function clickHandler() {
-            console.log("Delete#" + member.id);
-            deleteMember(member.id);
-        }
-        DelBtn[member.id] =clickHandler;
-        delBtn.onclick = DelBtn[member.id];
+    DelBtn = {};
+
+    for (let i = 0; i < Members.length; i++) {
+        let member = Members[i];
         let newRow = `<tr id=ID${member.id}>
                         <th scope="row">${member.id}</th>
                         <td id="lbFirstName${member.id}">${member.firstname}</td>
                         <td id="lbLastName${member.id}" >${member.lastname}</td>
                         <td id="lbEmail${member.id}"> ${member.email}</td>
-                        <td id="lbCommand${member.id}"></div>
+                        <td id="lbCommand${member.id}"><button id="btnDel${member.id} class="btn btn-danger" >del</button></div>
                         </td>
                       </tr>`;
-
         tbMembers.innerHTML += newRow;
-        let command = document.getElementById(`lbCommand${member.id}`);
-             command.appendChild(delBtn);
 
-    });
+        
+    }
+    let btnDEL = tbMembers.getElementsByTagName('button');
+    for (let i = 0; i < btnDEL.length; i++) {
+        btnDEL[i].onclick = function () {
+            console.log("Delete#" + Members[i].id);
+            deleteMember(Members[i].id);
+        };
+    }
+    
 
 }
 
@@ -132,5 +130,5 @@ btnAdd.onclick = () => {
     addMember(member);
     //Members.push(member);
     //renderTable();
-   
+
 };
