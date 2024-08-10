@@ -28,39 +28,64 @@ function members(firstname, lastname, email) {
 //     renderTable();
 // }
 
-function hello(){
+function hello() {
     console.log("Hello");
 };
 
-let DelBtn =[];
+let DelBtn = [];
 function renderTable() {
     tbMembers.innerHTML = '';
-    const delBtn = document.createElement('button');
-
-
-    for (let i = 0; i < Members.length; i++) {
-        delBtn.innerHTML = 'Del:'+Members[i].id;
+    let newRow = '';
+    Members.forEach((member, index) => {
+        let delBtn = document.createElement('button');
+        delBtn.innerHTML = 'Del:' + member.id;
         delBtn.className = 'btn btn-danger';
-        delBtn.id = 'btnDelete'+i;
-
-        delBtn.onclick = function(){
-            console.log("Delete#"+i);
-            deleteMember(Members[i].id);
+        
+        delBtn.onclick = function () {
+            console.log("Delete#");
+            deleteMember(member.id);
         }
-
-        let newRow = `<tr id=ID${i}>
-                        <th scope="row">${i}</th>
-                        <td id="lbFirstName${i}">${Members[i].firstname}</td>
-                        <td id="lbLastName${i}" >${Members[i].lastname}</td>
-                        <td id="lbEmail${i}"> ${Members[i].email}</td>
-                        <td id="lbCommand${i}"></div>
+        let newRow = `<tr id=ID${member.id}>
+                        <th scope="row">${member.id}</th>
+                        <td id="lbFirstName${member.id}">${member.firstname}</td>
+                        <td id="lbLastName${member.id}" >${member.lastname}</td>
+                        <td id="lbEmail${member.id}"> ${member.email}</td>
+                        <td id="lbCommand${member.id}"></div>
                         </td>
                       </tr>`;
 
         tbMembers.innerHTML += newRow;
-        let command = document.getElementById('lbCommand' + i);
-        command.appendChild(delBtn);
-    }
+        let command = document.getElementById(`lbCommand${member.id}`);
+             command.appendChild(delBtn);
+
+    });
+
+    // const delBtn = document.createElement('button');
+
+
+    // for (let i = 0; i < Members.length; i++) {
+    //     delBtn.innerHTML = 'Del:'+Members[i].id;
+    //     delBtn.className = 'btn btn-danger';
+    //     delBtn.id = 'btnDelete'+i;
+
+    //     delBtn.onclick = function(){
+    //         console.log("Delete#"+i);
+    //         deleteMember(Members[i].id);
+    //     }
+
+    //     let newRow = `<tr id=ID${i}>
+    //                     <th scope="row">${i}</th>
+    //                     <td id="lbFirstName${i}">${Members[i].firstname}</td>
+    //                     <td id="lbLastName${i}" >${Members[i].lastname}</td>
+    //                     <td id="lbEmail${i}"> ${Members[i].email}</td>
+    //                     <td id="lbCommand${i}"></div>
+    //                     </td>
+    //                   </tr>`;
+
+    //     tbMembers.innerHTML += newRow;
+    //     let command = document.getElementById('lbCommand' + i);
+    //     command.appendChild(delBtn);
+    // }
 }
 
 let memberID = 0;
@@ -87,19 +112,21 @@ async function getData() {
 }
 async function deleteMember(id) {
     renderTable();
-    let request = new Request("http://localhost:8000/member/"+id, {
+    let request = new Request("http://localhost:8000/member/" + id, {
         method: "DELETE"
     });
     let response = await fetch(request);
     let result = await response.json();
     console.log(result);
     getMembers();
-  
+
 }
 
+
 async function getMembers() {
+    Members = [];
     Members = await getData();
-    // console.log(Members);
+    console.log(Members);
     renderTable();
 }
 
