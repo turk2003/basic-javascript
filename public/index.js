@@ -32,19 +32,20 @@ function hello() {
     console.log("Hello");
 };
 
-let DelBtn = [];
+let DelBtn = {};
 function renderTable() {
     tbMembers.innerHTML = '';
-    let newRow = '';
+     DelBtn = {};
     Members.forEach((member, index) => {
         let delBtn = document.createElement('button');
         delBtn.innerHTML = 'Del:' + member.id;
-        delBtn.className = 'btn btn-danger';
-        
-        delBtn.onclick = function () {
-            console.log("Delete#");
-            deleteMember(member.id);
+        delBtn.id = 'delBtn' + member.id;
+        //delBtn.className = 'btn btn-danger';
+        function clickHandler() {
+            console.log("Delete#" + member.id);
         }
+        DelBtn[member.id] =clickHandler;
+        delBtn.onclick = DelBtn[member.id];
         let newRow = `<tr id=ID${member.id}>
                         <th scope="row">${member.id}</th>
                         <td id="lbFirstName${member.id}">${member.firstname}</td>
@@ -60,32 +61,6 @@ function renderTable() {
 
     });
 
-    // const delBtn = document.createElement('button');
-
-
-    // for (let i = 0; i < Members.length; i++) {
-    //     delBtn.innerHTML = 'Del:'+Members[i].id;
-    //     delBtn.className = 'btn btn-danger';
-    //     delBtn.id = 'btnDelete'+i;
-
-    //     delBtn.onclick = function(){
-    //         console.log("Delete#"+i);
-    //         deleteMember(Members[i].id);
-    //     }
-
-    //     let newRow = `<tr id=ID${i}>
-    //                     <th scope="row">${i}</th>
-    //                     <td id="lbFirstName${i}">${Members[i].firstname}</td>
-    //                     <td id="lbLastName${i}" >${Members[i].lastname}</td>
-    //                     <td id="lbEmail${i}"> ${Members[i].email}</td>
-    //                     <td id="lbCommand${i}"></div>
-    //                     </td>
-    //                   </tr>`;
-
-    //     tbMembers.innerHTML += newRow;
-    //     let command = document.getElementById('lbCommand' + i);
-    //     command.appendChild(delBtn);
-    // }
 }
 
 let memberID = 0;
