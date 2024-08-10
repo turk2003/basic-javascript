@@ -22,37 +22,43 @@ function members(firstname, lastname, email) {
         email: email
     };
 }
-function deleteMember(id) {
-    console.log("Delete#"+id);
-    //Members.splice(id, 1);
-    renderTable();
-}
+// function deleteMember(id) {
+//     console.log("Delete#"+id);
+//     //Members.splice(id, 1);
+//     renderTable();
+// }
 
+function hello(){
+    console.log("Hello");
+};
 
-
+let DelBtn =[];
 function renderTable() {
     tbMembers.innerHTML = '';
-    let delBtn = document.createElement('button');
-    delBtn.innerHTML = 'Delete';
-    delBtn.className = 'btn btn-danger';
+    const delBtn = document.createElement('button');
+
 
     for (let i = 0; i < Members.length; i++) {
+        delBtn.innerHTML = 'Del:'+Members[i].id;
+        delBtn.className = 'btn btn-danger';
+        delBtn.id = 'btnDelete'+i;
 
-        delBtn.onclick = () => {
+        delBtn.onclick = function(){
+            console.log("Delete#"+i);
             deleteMember(Members[i].id);
-        };
+        }
 
         let newRow = `<tr id=ID${i}>
                         <th scope="row">${i}</th>
                         <td id="lbFirstName${i}">${Members[i].firstname}</td>
                         <td id="lbLastName${i}" >${Members[i].lastname}</td>
                         <td id="lbEmail${i}"> ${Members[i].email}</td>
-                        <td id="lbCommand${i}"></td>
+                        <td id="lbCommand${i}"></div>
+                        </td>
                       </tr>`;
 
         tbMembers.innerHTML += newRow;
-
-        let command = document.getElementById(`lbCommand${i}`);
+        let command = document.getElementById('lbCommand' + i);
         command.appendChild(delBtn);
     }
 }
@@ -79,7 +85,17 @@ async function getData() {
         console.error(error);
     }
 }
-
+async function deleteMember(id) {
+    renderTable();
+    let request = new Request("http://localhost:8000/member/"+id, {
+        method: "DELETE"
+    });
+    let response = await fetch(request);
+    let result = await response.json();
+    console.log(result);
+    getMembers();
+  
+}
 
 async function getMembers() {
     Members = await getData();
@@ -87,6 +103,7 @@ async function getMembers() {
     renderTable();
 }
 
+getMembers();
 async function addMember(member) {
     let request = new Request("http://localhost:8000/member", {
         method: "POST",
