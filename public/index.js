@@ -43,6 +43,7 @@ function renderTable() {
         //delBtn.className = 'btn btn-danger';
         function clickHandler() {
             console.log("Delete#" + member.id);
+            deleteMember(member.id);
         }
         DelBtn[member.id] =clickHandler;
         delBtn.onclick = DelBtn[member.id];
@@ -131,5 +132,5 @@ btnAdd.onclick = () => {
     addMember(member);
     //Members.push(member);
     //renderTable();
-    memberID++;
+   
 };
