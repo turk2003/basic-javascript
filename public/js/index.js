@@ -38,7 +38,7 @@ async function main(){
         let _member = Members.form.getData();
         Members.service.add(_member);
         Members.data = await Members.service.getlist();
-        trenderTable();
+        renderTable();
     });
 
     Members.form.buttonGetAll.addEventListener('click', async function(){
