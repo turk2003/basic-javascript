@@ -1,5 +1,7 @@
 import { Members } from "./members/index.js";
 
+import { helloMyJs } from "./myjs.js";
+
 
 let tbodyMembers = document.getElementById('tbodyMembers');
 
@@ -32,6 +34,8 @@ function renderTable() {
 }
     
 async function main(){
+
+    helloMyJs();
 
     Members.form.buttonAdd.addEventListener('click', async function(){
         console.log(Members.form.getData());
