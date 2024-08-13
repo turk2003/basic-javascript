@@ -19,14 +19,15 @@ async function getData() {
 }
 
 
-async function deleteMember(id) {
-    renderTable();
+async function deleteMember(id,tb) {
+    console.log(`Delete member with id: ${id}`);
     let request = new Request("http://localhost:8000/member/" + id, {
         method: "DELETE"
     });
     let response = await fetch(request);
     let result = await response.json();
     console.log(result);
+    
     return result;
 
 }

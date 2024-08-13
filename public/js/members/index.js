@@ -11,16 +11,6 @@ const Members = {
     service:memberService
 };
 
-// Members.form.buttonAdd.addEventListener('click', function(){
-//     let member = Members.model(
-//         Members.form.firstName.value,
-//         Members.form.lastName.value,
-//         Members.form.email.value,
-//         Members.form.zipcode.value
-//     );
-//     Members.data.push(member);
-//     console.log(Members.data);
-// });
 
 
 export { Members }; 

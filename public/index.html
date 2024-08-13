@@ -16,63 +16,67 @@
       <h1>Basic JavaScript</h1>
     </div>
 
-        <div class="row">
-          <div class="row">
-            <br>
-          </div>
-          <div class="row ">
-            <div class="col">
-              <input type="text" id="txtFirstName" class="form-control" placeholder="First name" aria-label="First name">
-            </div>
-            <div class="col">
-              <input type="text" id="txtLastName" class="form-control" placeholder="Last name" aria-label="Last name">
-            </div>
-          </div>
-          <div class="row">
-            <br>
-          </div>
-          <div class="row">
-            <div class="col">
-              <input type="text" id="txtEmail" class="form-control" placeholder="E-Mail" aria-label="E-Mail">
-            </div>
-            <div class="col">
-              <input type="text" id="txtZipCode" class="form-control" placeholder="ZipCode" aria-label="ZipCode">
-            </div>
-          </div>
-          <div class="row">
-            <br>
-          </div>
-          <div class="row">
-            <div class="col">
-              
-            </div>
-            <div class="col">
-              
-            </div>
-            <div class="col">
-              <button type="button" id="btnGetAll" class="btn btn-primary">Get All</button>
-              <button type="button" id="btnAdd" class="btn btn-primary">ADD</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <br>
-          </div>
+    <div class="row">
+      <div class="row">
+        <br>
+      </div>
+      <div class="row ">
+        <div class="col">
+          <input type="text" id="txtFirstName" class="form-control" placeholder="First name" aria-label="First name">
         </div>
-        <div class="row">
-          <table class="table  table-striped table-hover" id="tbMembers">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">E-Mail</th>
-                <th scope="col">ZipCode</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody id="tbodyMembers">
-              <!-- <tr>
+        <div class="col">
+          <input type="text" id="txtLastName" class="form-control" placeholder="Last name" aria-label="Last name">
+        </div>
+      </div>
+      <div class="row">
+        <br>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="text" id="txtEmail" class="form-control" placeholder="E-Mail" aria-label="E-Mail">
+        </div>
+        <div class="col">
+          <input type="text" id="txtZipCode" class="form-control" placeholder="ZipCode" aria-label="ZipCode">
+        </div>
+      </div>
+      <div class="row">
+        <br>
+      </div>
+      <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+
+        </div>
+        <div class="col">
+          <button type="button" id="btnGetAll" class="btn btn-primary">Get All</button>
+          <button type="button" id="btnAdd" class="btn btn-primary">ADD</button>
+          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            ZipTool
+          </button> -->
+    
+        </div>
+      </div>
+
+      <div class="row">
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table  table-striped table-hover" id="tbMembers">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">E-Mail</th>
+            <th scope="col">ZipCode</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyMembers">
+          <!-- <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -80,15 +84,36 @@
                 <td>ZipCode</td>
                 <td><button type="button" class="btn btn-danger">Del</button></td>
               </tr> -->
-            </tbody>
-          </table>
-        </div>
+        </tbody>
+      </table>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script type="module"  src="/js/index.js" defer></script>
+    <div class="row">
+      <!-- Button trigger modal -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script type="module" src="/js/index.js" defer></script>
 </body>
 
-</html> 
+</html>
