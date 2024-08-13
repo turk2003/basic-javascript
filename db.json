@@ -1,52 +1,11 @@
 {
   "member": [
     {
-      "id": "2b54",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
-    },
-    {
-      "id": "89fc",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
-    },
-    {
-      "id": "4875",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
-    },
-    {
-      "id": "c52b",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
-    },
-    {
-      "id": "4770",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
-    },
-    {
-      "id": "a72d",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
-    },
-    {
-      "id": "29e1",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
-    },
-    {
-      "id": "f97c",
-      "firstname": "asdas",
-      "lastname": "dasd",
-      "email": "asdasd"
+      "id": "fa74",
+      "firstname": "test",
+      "lastname": "test",
+      "email": "test@test",
+      "zipcode": "101100"
     }
   ]
 }

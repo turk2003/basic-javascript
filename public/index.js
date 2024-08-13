@@ -5,6 +5,7 @@ const appHeader = document.getElementById('app-header');
 const txtFirstName = document.getElementById('txtFirstName');
 const txtLastName = document.getElementById('txtLastName');
 const txtEmail = document.getElementById('txtEmail');
+const txtZipCode = document.getElementById('txtZipCode');
 
 const lbFirstName = document.getElementById('lbFirstName');
 const lbLastName = document.getElementById('lbLastName');
@@ -15,11 +16,12 @@ let btnAdd = document.getElementById('btnAdd');
 const tbMembers = document.getElementById('tbMembers');
 
 
-function members(firstname, lastname, email) {
+function members(firstname, lastname, email,zipcode) {
     return {
         firstname: firstname,
         lastname: lastname,
-        email: email
+        email: email,
+        zipcode: zipcode
     };
 }
 // function deleteMember(id) {
@@ -44,6 +46,7 @@ function renderTable() {
                         <td id="lbFirstName${member.id}">${member.firstname}</td>
                         <td id="lbLastName${member.id}" >${member.lastname}</td>
                         <td id="lbEmail${member.id}"> ${member.email}</td>
+                        <td id="lbEmail${member.id}"> ${member.zipcode}</td>
                         <td id="lbCommand${member.id}"><button type="button" id="btnDel${member.id}" class="btn btn-danger">Delete</button></div></td>
                       </tr>`;
         tbMembers.innerHTML += newRow;
@@ -125,7 +128,7 @@ btnGetAll.onclick = () => {
 };
 
 btnAdd.onclick = () => {
-    let member = members(txtFirstName.value, txtLastName.value, txtEmail.value);
+    let member = members(txtFirstName.value, txtLastName.value, txtEmail.value,txtZipCode.value);
     addMember(member);
 
 };
