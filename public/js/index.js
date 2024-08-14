@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Event listener for province selection
             selectProvince.addEventListener('change', function () {
-                selectDistrict.innerHTML = '<option value="" selected disabled>Select a district</option>';
-                selectZipCode.innerHTML = '<option value="" selected disabled>Select a ZIP code</option>';
+                // selectDistrict.innerHTML = '<option value="" selected disabled>เลือกอำเภอ</option>';
+                // selectZipCode.innerHTML = '<option value="" selected disabled>Select a ZIP code</option>';
                 selectDistrict.disabled = false;
 
                 const selectedProvince = provinces.find(p => p.name_th === this.value);
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             // Event listener for district selection
             selectDistrict.addEventListener('change', function () {
-                selectZipCode.innerHTML = '<option value="" selected disabled>Select a ZIP code</option>';
+                // selectZipCode.innerHTML = '<option value="" selected disabled>เลือกตำบล</option>';
                 selectZipCode.disabled = false;
                 let zipcode 
 
